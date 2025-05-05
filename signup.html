@@ -1,0 +1,163 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css" />
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    animation: backgroundAnimation 5s infinite alternate;
+
+  }
+
+  @keyframes backgroundAnimation{
+    0% {
+      background-color: plum; /* Blue */
+    }
+    50% {
+      background-color: palegreen; /* Red */
+    }
+    100% {
+      background-color: palegoldenrod; /* Green */
+    }
+  }
+
+  /* Container styles */
+  .signup-container {
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.521);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Form styles */
+  .signup-container h1 {
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+  }
+
+  input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+
+  /* Button styles */
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  /* Additional text styles */
+  p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: black;
+  }
+
+  p a {
+    color: green;
+    text-decoration: none;
+  }
+
+  p a:hover {
+    text-decoration: underline;
+  }
+
+    </style>
+  </head>
+  <body>
+    <div class="signup-container">
+      <h1>Create an Account</h1>
+      <form action="{% url 'index' %}">
+        <label for="fullname">Full Name</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Enter your full name"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Create a password"
+          required
+        />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          placeholder="Re-enter your password"
+          required
+        />
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+    </div>
+  </body>
+</html>
